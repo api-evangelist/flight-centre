@@ -1,0 +1,65 @@
+generated: '2026-07-28'
+method: searched
+status: announced
+published: false
+source: https://tpconnects.com/news/iris-mcp-layer-ai-airline-distribution/
+note: |
+  Flight Centre Travel Group publishes no MCP server. The group's only MCP activity
+  sits at TPConnects Technologies, the Dubai NDC aggregator it holds a 70% stake in
+  and lists as a group brand, which announced MCP layers over both of its platforms
+  in the first half of 2026.
+
+  NO `MCPServer` pointer is wired into apis.yml. The announcements are real and
+  quoted below, but no server URL, transport, tool list or manifest has been
+  published, and every discovery probe fails. Claiming an MCP server here would be
+  fabrication.
+announcements:
+- product: Astra NDC Gateway
+  entity: TPConnects Technologies (70% FCTG-owned)
+  date: '2026-03-12'
+  headline: TPConnects Unveils Industry-First MCP Layer for Astra NDC Gateway
+  url: https://tpconnects.com/news/ai-ready-airline-retailing-mcp-layer/
+  claims:
+  - Positions Astra as a universal adapter layer normalizing NDC versions 18.2
+    through 24.4 into a single harmonized interface.
+  - Single integration point across all airline NDC versions and schema variations.
+  - AI-ready interfaces exposing airline capabilities in structured, machine-readable
+    formats.
+  - Paired with Astra ConvertEngine search optimization, claimed at 60% volume
+    reduction with 97% accuracy in production.
+- product: Iris Aggregator Platform
+  entity: TPConnects Technologies (70% FCTG-owned)
+  date: '2026-04-07'
+  headline: TPConnects Iris MCP Layer Enables 60+ Airline Access
+  url: https://tpconnects.com/news/iris-mcp-layer-ai-airline-distribution/
+  claims:
+  - MCP interface over the Iris aggregation of 60+ NDC-enabled and LCC carriers plus
+    4 GDS platforms.
+  - Automated onboarding of new carriers; MCP-reading systems gain access to newly
+    added airlines immediately.
+  - Self-learning capability discovery as airlines introduce new features,
+    ancillaries or servicing options.
+  - Normalized MCP-format content covering fare families, ancillaries, rules and
+    servicing capabilities.
+  - Designed to work whether an airline runs its own MCP server (via Astra) or relies
+    on Iris to project existing NDC/GDS/API implementations into MCP.
+  attributed_to: Praveen Kumar, Co-founder and CTO, TPConnects Technologies
+discovery_probes:
+- {url: 'https://mcp.tpconnects.com', status: 0, note: DNS does not resolve}
+- {url: 'https://tpconnects.com/.well-known/mcp.json', status: 400}
+- {url: 'https://tpconnects.com/.well-known/oauth-protected-resource', status: 400}
+- {url: 'https://astra.tpconnects.com', status: 0, note: DNS does not resolve}
+- {url: 'https://iris.tpconnects.com', status: 200, note: Angular single-page-app
+    portal shell; /openapi.json returns the same HTML shell, not a spec}
+- {url: 'https://api.iris.tpconnects.com', status: 401, note: Real API host, fully
+    auth-gated; no anonymous tools/list, no spec, no discovery document}
+tools: []
+tools_note: >-
+  No tool list can be recorded. tools/list requires a server URL, none is published,
+  and the OpenAPI that would let a candidate tool set be derived does not exist -
+  the Iris and Astra reference documentation is behind a ReadMe/Auth0 login at
+  docs.tpconnects.com.
+follow_up: >-
+  TPConnects Technologies warrants its own provider profile (slug tpconnects). If an
+  MCP endpoint is published there, that repo - not this one - is where the MCPServer
+  pointer belongs.

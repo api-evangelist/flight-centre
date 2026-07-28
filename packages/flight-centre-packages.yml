@@ -1,0 +1,31 @@
+generated: '2026-07-28'
+method: searched
+source: live registry searches, 2026-07-28
+note: |
+  No first-party client library, SDK or CLI is published by Flight Centre Travel
+  Group or any of its brands on any public package registry. This is the expected
+  result for a provider with no published API - it is recorded rather than inferred.
+
+  No `SDKs` pointer is emitted in apis.yml, because no official package exists.
+packages: []
+registries_searched:
+- registry: npm
+  queries: [flight centre, flightcentre, fcm travel, tpconnects, discova, envoyage]
+  first_party_hits: 0
+  note: >-
+    The npm package `envoyage` and the `@envoyage/*` scope are an unrelated
+    third-party environment-variable / browser-driving toolchain, not the Flight
+    Centre independent-agent brand. No FCTG-owned publisher account was found.
+- registry: pypi
+  queries: [flightcentre, tpconnects, fcm-travel, discova]
+  first_party_hits: 0
+  note: All four return 404 from the PyPI JSON API.
+- registry: github
+  queries: [flightcentre, fctg, fcmtravel, FlightCentreTravelGroup, Discova,
+    tpconnects, envoyage, whereto-travel]
+  first_party_hits: 0
+  note: >-
+    Only two organisations exist - github.com/Discova (id 54895764) and
+    github.com/tpconnects (id 38500583, created 2018-04-18). Both report
+    public_repos = 0 and both /repos endpoints return an empty array. No
+    GitHubOrganization pointer is emitted for an organisation with no public code.

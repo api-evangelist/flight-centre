@@ -509,3 +509,54 @@ actions:
     B2B portal, and a note that its reference documentation is gated behind ReadMe /
     Auth0. WhereTo (all/whereto already exists) should be cross-referenced as an
     FCTG-owned brand.
+enrichment:
+  - date: '2026-07-28'
+    round: 'enrichment 2026-07-28'
+    findings: |
+      Second pass. The "no published API" conclusion stands for every Flight Centre
+      Travel Group brand, but three new machine-readable facts were found one level
+      down at 70%-owned TPConnects, none of which existed in the first review:
+
+      1. tpconnects.com serves a real llms.txt (200, 38,472 bytes) - the only
+         llms.txt anywhere in the group. Saved verbatim to
+         llms/flight-centre-tpconnects-llms.txt.
+      2. tpconnects.com serves live OpenID Connect discovery and RFC 8414
+         authorization-server metadata (both 200). Issuer https://tpconnects.com,
+         scopes openid/profile/email/basic, RS256, no dynamic client registration.
+         This is the web property's own OAuth server, not the Iris or Astra API.
+         Saved to well-known/.
+      3. TPConnects announced MCP layers over Astra (2026-03-12) and Iris
+         (2026-04-07). Announcements only - mcp.tpconnects.com does not resolve,
+         /.well-known/mcp.json returns 400, and no server URL, transport or tool
+         list is published. Recorded in mcp/flight-centre-mcp.yml with NO MCPServer
+         pointer.
+
+      A real API host was also identified: api.iris.tpconnects.com resolves,
+      terminates TLS 1.2, and returns 401 for every path probed (/, /openapi.json,
+      /swagger.json, /swagger/v1/swagger.json, /swagger, /api-docs, /docs, /health).
+      iris.tpconnects.com/openapi.json returns an Angular SPA shell, not a spec, so
+      the contract-discovery pass still ends with no machine-readable contract.
+
+      Registry sweep: zero first-party packages on npm, PyPI or GitHub.
+      github.com/tpconnects (id 38500583) exists alongside github.com/Discova; both
+      report public_repos = 0.
+    newProbes:
+      - {url: 'https://tpconnects.com/llms.txt', status: 200}
+      - {url: 'https://tpconnects.com/.well-known/openid-configuration', status: 200}
+      - {url: 'https://tpconnects.com/.well-known/oauth-authorization-server', status: 200}
+      - {url: 'https://tpconnects.com/.well-known/keys/', status: 200}
+      - {url: 'https://tpconnects.com/.well-known/mcp.json', status: 400}
+      - {url: 'https://tpconnects.com/.well-known/oauth-protected-resource', status: 400}
+      - {url: 'https://mcp.tpconnects.com', status: 000}
+      - {url: 'https://astra.tpconnects.com', status: 000}
+      - {url: 'https://iris.tpconnects.com', status: 200}
+      - {url: 'https://iris.tpconnects.com/openapi.json', status: 200,
+         note: HTML single-page-app shell, not an OpenAPI document}
+      - {url: 'https://api.iris.tpconnects.com/openapi.json', status: 401}
+      - {url: 'https://api.iris.tpconnects.com/swagger/v1/swagger.json', status: 401}
+      - {url: 'https://www.flightcentre.com.au/.well-known/security.txt', status: 403}
+      - {url: 'https://help.flightcentre.com.au/s/', status: 200}
+      - {url: 'https://help.flightcentre.com.au/s/article/terms-of-use-au', status: 200}
+      - {url: 'https://www.fcmtravel.com/en-us/resources/news-hub', status: 200}
+      - {url: 'https://api.github.com/orgs/tpconnects', status: 200,
+         note: public_repos = 0}

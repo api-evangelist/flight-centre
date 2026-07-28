@@ -32,6 +32,21 @@ Every developer-shaped subdomain probed on `fctgl.com`, `fcmtravel.com`, `flight
 
 See [review.yml](review.yml) for the full probe log and the switching-cost analysis.
 
+## Artifacts
+
+| Artifact | File | What it records |
+| --- | --- | --- |
+| Conformance | [conformance/flight-centre-conformance.yml](conformance/flight-centre-conformance.yml) | IATA NDC Level 4 (claimed), NDC Schema 18.2/21.3 via TPConnects, OAuth 2.0 / OIDC on tpconnects.com, and the standards that are genuinely not applicable. No compliance programme is published — no SOC 2, ISO 27001, PCI DSS, HIPAA or FedRAMP claim exists on any group domain. |
+| Well-known | [well-known/flight-centre-well-known.yml](well-known/flight-centre-well-known.yml) | Every `/.well-known/` path probed across nine group hosts. Flight Centre serves none; the only live documents belong to 70%-owned TPConnects and are archived alongside. |
+| Domain security | [security/flight-centre-domain-security.yml](security/flight-centre-domain-security.yml) | TLS, HSTS, DNSSEC, CAA, SPF and DMARC across nine hosts and eight domains. All HTTPS; six of nine serve HSTS; two domains are DNSSEC-signed; only `envoyage.com` publishes CAA. |
+| MCP posture | [mcp/flight-centre-mcp.yml](mcp/flight-centre-mcp.yml) | TPConnects announced MCP layers over Astra (March 2026) and Iris (April 2026). Announcements only — no server URL, no tool list, every discovery probe fails. No `MCPServer` pointer is claimed. |
+| Packages | [packages/flight-centre-packages.yml](packages/flight-centre-packages.yml) | npm, PyPI and GitHub sweep. Zero first-party SDKs. Both group GitHub organisations have zero public repositories. |
+| llms.txt | [llms/flight-centre-llms.txt](llms/flight-centre-llms.txt) | Generated. The group publishes no `llms.txt` of its own, but FCM and Corporate Traveler both publish human-readable `/llm-info` pages written for AI assistants, and [tpconnects.com/llms.txt](llms/flight-centre-tpconnects-llms.txt) is archived verbatim. |
+
+### What changed in the 2026-07-28 round
+
+The "no published API" finding is unchanged for every Flight Centre brand. Three new machine-readable facts turned up one level down at 70%-owned TPConnects: a real `llms.txt`, live OIDC/RFC 8414 discovery documents on the web property, and two 2026 press releases announcing MCP layers over the Iris and Astra platforms. A genuine API host was also identified — `api.iris.tpconnects.com` resolves and returns `401` for every path, including `/openapi.json` and `/swagger/v1/swagger.json`, so the contract-discovery pass still ends with no machine-readable contract in public.
+
 ## Switching Cost
 
 | Dimension | Finding |

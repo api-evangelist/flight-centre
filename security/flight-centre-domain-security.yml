@@ -1,0 +1,145 @@
+generated: '2026-07-28'
+method: probed
+source: live DNS/TLS/HTTP probes of every Flight Centre Travel Group brand host in
+  apis.yml plus the majority-owned TPConnects hosts
+note: |
+  Absence of a record (no CAA, no DNSSEC, no HSTS) is recorded data, not a gap in
+  the probe. Flight Centre Travel Group publishes no API hosts of its own, so the
+  hosts probed are the brand web properties; api.iris.tpconnects.com is the only
+  real API host in the group and it belongs to TPConnects Technologies (70%
+  FCTG-owned).
+hosts:
+- host: www.fctgl.com
+  entity: Flight Centre Travel Group
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 14 15:17:58 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: www.fcmtravel.com
+  entity: FCM Travel
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  9 14:04:57 2026 GMT
+  hsts: true
+  hsts_max_age: 31622400
+- host: www.flightcentre.com.au
+  entity: Flight Centre Australia
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 24 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: www.corporatetraveler.us
+  entity: Corporate Traveler
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 25 14:42:41 2026 GMT
+  hsts: true
+  hsts_max_age: 31622400
+- host: www.discova.com
+  entity: Discova
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  6 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: www.envoyage.com
+  entity: Envoyage
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec 11 23:59:59 2026 GMT
+  hsts: false
+- host: www.whereto.com
+  entity: WhereTo (FCTG-owned)
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  6 10:33:08 2026 GMT
+  hsts: true
+  hsts_max_age: 15552000
+- host: tpconnects.com
+  entity: TPConnects Technologies (70% FCTG-owned)
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 22 03:32:41 2026 GMT
+  hsts: false
+- host: api.iris.tpconnects.com
+  entity: TPConnects Iris API host (70% FCTG-owned)
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Dec 19 23:59:59 2026 GMT
+  hsts: false
+  note: The only genuine API host in the group. Negotiates TLS 1.2 (not 1.3) and
+    serves no HSTS header. Every path returns 401.
+domains:
+- domain: fctgl.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: fcmtravel.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: flightcentre.com.au
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: corporatetraveler.us
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: discova.com
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: envoyage.com
+  dnssec: false
+  caa:
+  - 0 issue "amazon.com"
+  - 0 issue "digicert.com"
+  - 0 issue "letsencrypt.org"
+  - 0 issue "pki.goog"
+  - 0 issue "sectigo.com"
+  - 0 issuewild "amazon.com"
+  - 0 issuewild ";"
+  - 0 iodef "mailto:abuse@flightcentre.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+  note: The only domain in the group with a CAA record set, and the only one whose
+    CAA publishes an incident-reporting address (abuse@flightcentre.com).
+- domain: tpconnects.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: whereto.com
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+summary:
+  hosts_probed: 9
+  https_all: true
+  tls13: 8
+  tls12: 1
+  hsts: 6
+  domains_probed: 8
+  dnssec: 2
+  caa: 1
+  spf: 8
+  dmarc: 8
+  dmarc_reject: 2
+  dmarc_quarantine: 6

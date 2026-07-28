@@ -1,0 +1,129 @@
+generated: '2026-07-28'
+method: searched
+source: live HTTP probes of every Flight Centre Travel Group brand host plus the
+  majority-owned TPConnects hosts
+note: |
+  Flight Centre Travel Group itself publishes NO /.well-known/ discovery surface on
+  any brand host it controls. Every path probed on fctgl.com, fcmtravel.com,
+  corporatetraveler.us, discova.com, envoyage.com and whereto.com returns 404;
+  flightcentre.com.au returns 403 for the whole /.well-known/ prefix (WAF blanket
+  block, not a served document).
+
+  The only live /.well-known/ documents anywhere in the group belong to
+  TPConnects Technologies (Dubai NDC aggregator, 70% FCTG-owned, listed as a group
+  brand at https://www.fctgl.com/brands). They are recorded here, explicitly
+  attributed, because they are the group's only machine-readable discovery surface.
+  They describe the tpconnects.com marketing/portal site's own OAuth 2.0 /
+  OpenID Connect server - NOT the Iris or Astra NDC APIs, whose reference
+  documentation remains behind a ReadMe/Auth0 login.
+hosts:
+- host: https://www.fctgl.com
+  entity: Flight Centre Travel Group
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://www.fcmtravel.com
+  entity: FCM Travel (FCTG corporate travel brand)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://www.flightcentre.com.au
+  entity: Flight Centre (FCTG Australian leisure retail brand)
+  note: WAF returns 403 for the entire /.well-known/ prefix; no document is served.
+  documents:
+  - {path: /.well-known/security.txt, status: 403}
+  - {path: /.well-known/openid-configuration, status: 403}
+  - {path: /.well-known/oauth-authorization-server, status: 403}
+  - {path: /.well-known/api-catalog, status: 403}
+  - {path: /.well-known/ai-plugin.json, status: 403}
+  - {path: /llms.txt, status: 404}
+- host: https://www.corporatetraveler.us
+  entity: Corporate Traveler (FCTG SME corporate brand)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://www.discova.com
+  entity: Discova (FCTG wholesale DMC brand)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://www.envoyage.com
+  entity: Envoyage (FCTG independent-agent brand)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://www.whereto.com
+  entity: WhereTo (FCTG-owned AI corporate booking tool)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://tpconnects.com
+  entity: TPConnects Technologies (Dubai NDC aggregator, 70% FCTG-owned group brand)
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: flight-centre-tpconnects-openid-configuration.json
+    note: >-
+      OpenID Connect discovery document for the tpconnects.com site's own OAuth 2.0
+      server (issuer https://tpconnects.com). scopes_supported = openid, profile,
+      email, basic. Grants: authorization_code, client_credentials, refresh_token,
+      implicit, plus a vendor grant "uswo_me_resource_returner_credentials".
+      registration_endpoint is null (no dynamic client registration). This is the
+      web-property login server, not the Iris or Astra NDC API.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: flight-centre-tpconnects-oauth-authorization-server.json
+    note: RFC 8414 metadata; byte-identical payload to the OIDC discovery document.
+  - path: /.well-known/keys/
+    status: 200
+    note: JWKS endpoint referenced by jwks_uri. Not archived here.
+  - path: /llms.txt
+    status: 200
+    file: ../llms/flight-centre-tpconnects-llms.txt
+    note: >-
+      Real published llms.txt (38,472 bytes) - a link index of TPConnects news,
+      resources and product pages. The only llms.txt anywhere in the group.
+  - {path: /.well-known/security.txt, status: 400}
+  - {path: /.well-known/api-catalog, status: 400}
+  - {path: /.well-known/ai-plugin.json, status: 400}
+  - {path: /.well-known/oauth-protected-resource, status: 400}
+  - {path: /.well-known/mcp.json, status: 400}
+- host: https://api.iris.tpconnects.com
+  entity: TPConnects Iris API host (70% FCTG-owned)
+  note: >-
+    Host resolves and terminates TLS 1.2, but every path returns 401 - the Iris API
+    is fully auth-gated with no anonymous discovery surface. Probed /, /openapi.json,
+    /swagger.json, /swagger/v1/swagger.json, /swagger, /api-docs, /docs, /health.
+  documents:
+  - {path: /openapi.json, status: 401}
+  - {path: /swagger.json, status: 401}
+  - {path: /swagger/v1/swagger.json, status: 401}
+  - {path: /api-docs, status: 401}
+security_txt:
+  published: false
+  note: No /.well-known/security.txt is served on any Flight Centre Travel Group or
+    TPConnects host.

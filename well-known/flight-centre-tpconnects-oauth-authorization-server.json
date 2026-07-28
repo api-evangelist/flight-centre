@@ -1,0 +1,40 @@
+{
+    "issuer": "https://tpconnects.com",
+    "authorization_endpoint": "https://tpconnects.com/oauth/authorize/",
+    "token_endpoint": "https://tpconnects.com/oauth/token/",
+    "userinfo_endpoint": "https://tpconnects.com/oauth/me/",
+    "end_session_endpoint": "https://tpconnects.com/oauth/destroy/",
+    "jwks_uri": "https://tpconnects.com/.well-known/keys/",
+    "revocation_endpoint": "https://tpconnects.com/oauth/revoke/",
+    "introspection_endpoint": "https://tpconnects.com/oauth/introspection/",
+    "registration_endpoint": null,
+    "grant_types_supported": [
+        "authorization_code",
+        "client_credentials",
+        "refresh_token",
+        "uswo_me_resource_returner_credentials",
+        "implicit"
+    ],
+    "service_documentation": null,
+    "scopes_supported": [
+        "openid",
+        "profile",
+        "email",
+        "basic"
+    ],
+    "response_types_supported": [
+        "code",
+        "id_token",
+        "token id_token",
+        "code id_token"
+    ],
+    "subject_types_supported": [
+        "public"
+    ],
+    "id_token_signing_alg_values_supported": [
+        "RS256"
+    ],
+    "token_endpoint_auth_methods_supported": [
+        "client_secret_basic"
+    ]
+}

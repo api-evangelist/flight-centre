@@ -1,0 +1,55 @@
+# Flight Centre Travel Group
+
+> Flight Centre Travel Group (ASX: FLT) is a Brisbane-headquartered travel retailer and corporate travel manager, one of the largest agency groups in the world and by far the largest in Australia. It runs more than thirty brands across leisure retail, corporate travel management and wholesale supply, with company-owned operations in twenty-four countries and licensed operations in roughly ninety more. It sits on the demand side of travel distribution: an aggregator-reseller that buys airline, hotel, cruise and land content through the GDSs (Sabre, Amadeus), through NDC aggregators, and through direct supplier agreements, and resells it to consumers and corporate travel programmes.
+
+## API posture
+
+Flight Centre Travel Group publishes **no public API**. There is no developer portal, no API reference, no OpenAPI or Swagger document, no GraphQL endpoint, no AsyncAPI, no webhook catalogue and no partner API documentation on any brand domain. Every developer-shaped subdomain probed on fctgl.com, fcmtravel.com, flightcentre.com.au, corporatetraveler.us, discova.com, studentuniverse.com and envoyage.com fails to resolve in DNS. There is no developer programme to apply to and no self-serve access gate.
+
+The group is IATA NDC Level 4 certified as a travel management company (FCM states it was the first global TMC to reach that level, covering full offer and order management), but exposes no public NDC endpoint and publishes no NDC API.
+
+The group's only genuine machine-readable distribution asset is TPConnects Technologies, the Dubai NDC aggregator in which Flight Centre holds a 70% stake and which is listed as a group brand. Its Iris (travel-seller side) and Astra (airline side) APIs implement IATA NDC Schema 18.2 and 21.3 across 60+ NDC/LCC carriers and 4 GDSs, and TPConnects announced MCP layers over both platforms in March and April 2026 — but the reference documentation sits behind a ReadMe/Auth0 login and the API host api.iris.tpconnects.com returns 401 for every path. Nothing there is publicly consumable.
+
+## Company
+
+- [Flight Centre Travel Group](https://www.fctgl.com/): Corporate site — ASX listing, segments, global footprint.
+- [Brands](https://www.fctgl.com/brands): Authoritative list of the 30+ group brands, including TPConnects and WhereTo.
+- [About](https://www.fctgl.com/about)
+- [History](https://history.fctgl.com/)
+- [Global locations](https://www.fctgl.com/global-locations)
+- [Corporate directory](https://www.fctgl.com/corporate-directory)
+- [Investor relations](https://www.fctgl.com/investors)
+- [News](https://www.fctgl.com/news)
+- [Sustainability](https://www.fctgl.com/sustainability)
+- [Careers](https://www.fctgcareers.com/)
+
+## Brands with published machine-facing pages
+
+- [FCM Travel — LLM info](https://www.fcmtravel.com/en-us/llm-info): Machine-facing company facts page written for AI assistants. Mentions NDC; names no API.
+- [Corporate Traveler — LLM info](https://www.corporatetraveler.us/en-us/llm-info): Same pattern. Contains the group's only integration sentence — "Integration with expense management systems via APIs/data connectors" — with no API named, versioned or documented.
+- [FCM approach to NDC](https://www.fcmtravel.com/en/travel-insights/our-approach-ndc)
+- [FCM Platform](https://www.fcmtravel.com/en-us/products/platform): Names Concur, Deem and Cytric as connectable online booking tools; claims 600+ reports. No API, SDK, webhook or export documented.
+- [TPConnects Iris API](https://tpconnects.com/iris-travel-seller-solutions/iris-api/): 70%-owned. IATA NDC Schema 18.2 and 21.3, 60+ carriers, 4 GDSs, full order lifecycle. No base URL, no docs link, no self-serve onboarding.
+- [TPConnects Astra API](https://tpconnects.com/astra-airline-solutions/astra-api/): Airline-side NDC gateway. Demo-request access only.
+- [TPConnects llms.txt](https://tpconnects.com/llms.txt): The only llms.txt anywhere in the group.
+
+## Legal, privacy and data access
+
+- [Privacy policy (group)](https://www.fctgl.com/privacy-policy)
+- [Privacy policy (FCM)](https://www.fcmtravel.com/en/privacy-policy): Carries the explicit machine-readable data-portability clause.
+- [Privacy policy (Flight Centre AU)](https://help.flightcentre.com.au/s/article/privacy-policy-au)
+- [Terms of use (Flight Centre AU)](https://help.flightcentre.com.au/s/article/terms-of-use-au)
+- [Booking terms and conditions (Flight Centre AU)](https://help.flightcentre.com.au/s/article/booking-terms-conditions-au)
+- [Cookies policy](https://www.fctgl.com/cookies-policy)
+- [Subject access request (OneTrust)](https://privacyportal-de.onetrust.com/webform/01c95262-28d1-4b76-89f7-6b0b650d1af2/d036c47c-47be-4cb7-be63-5a65a9cc5f0d): The only working data-out mechanism found. Personal data only — there is no bulk export for corporate booking data.
+- [Help centre](https://help.flightcentre.com.au/s/): Support channel.
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/flight-centre/refs/heads/main/apis.yml): APIs.json index for this provider. `apis[]` is deliberately empty.
+- [review.yml](https://raw.githubusercontent.com/api-evangelist/flight-centre/refs/heads/main/review.yml): Full probe log, switching-cost analysis and NDC posture.
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/flight-centre/refs/heads/main/conformance/flight-centre-conformance.yml): Standards actually implemented or claimed.
+- [Well-known index](https://raw.githubusercontent.com/api-evangelist/flight-centre/refs/heads/main/well-known/flight-centre-well-known.yml): Every /.well-known/ path probed across the group.
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/flight-centre/refs/heads/main/security/flight-centre-domain-security.yml): TLS, HSTS, DNSSEC, CAA, SPF and DMARC across nine hosts and eight domains.
+- [MCP posture](https://raw.githubusercontent.com/api-evangelist/flight-centre/refs/heads/main/mcp/flight-centre-mcp.yml): TPConnects MCP announcements, and why no MCP server pointer is claimed.
+- [Packages](https://raw.githubusercontent.com/api-evangelist/flight-centre/refs/heads/main/packages/flight-centre-packages.yml): Registry search results — no first-party SDK exists.

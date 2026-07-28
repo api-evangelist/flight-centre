@@ -1,0 +1,132 @@
+generated: '2026-07-28'
+method: searched
+source: provider published pages + live probes; see evidence per entry
+note: |
+  Flight Centre Travel Group publishes no machine interface of its own, so most
+  cross-cutting API standards are not applicable rather than failed. The two
+  standards that genuinely bind here are IATA NDC (as a certified consumer of the
+  standard) and, one level down at 70%-owned TPConnects, IATA NDC Schema 18.2/21.3
+  plus OAuth 2.0 / OpenID Connect on the tpconnects.com web property.
+
+  Nothing in this file asserts a compliance programme. No SOC 2, ISO 27001, PCI DSS,
+  HIPAA or FedRAMP attestation is published on any Flight Centre Travel Group brand
+  domain, so no `Compliance` pointer is emitted in apis.yml.
+standards:
+- id: iata-ndc
+  name: IATA New Distribution Capability
+  conforms: true
+  role: consumer
+  level: Level 4 - Full Offer and Order Management
+  evidence: >-
+    FCM's own published claim to be the first global travel management company to
+    achieve IATA NDC Level 4 certification, covering full offer and order management
+    including servicing changes and disruption handling.
+  source: https://www.fcmtravel.com/en/resources/news-hub/fcm-is-first-global-tmc-to-achieve-iata-ndc-level-4-certification
+  caveat: >-
+    Recorded as the organisation's own published claim corroborated by trade press,
+    not as a registry-verified fact - the IATA NDC certification registry page
+    probed at iata.org returned 404. No public NDC endpoint and no published NDC API
+    exists under any Flight Centre brand.
+- id: iata-ndc-schema-18.2
+  name: IATA NDC Schema 18.2
+  conforms: true
+  entity: TPConnects Technologies (70% FCTG-owned)
+  evidence: TPConnects Iris API product page names "IATA NDC Schema 18.2 and 21.3"
+    as the implemented message schema across 60+ NDC/LCC carriers and 4 GDSs.
+  source: https://tpconnects.com/iris-travel-seller-solutions/iris-api/
+- id: iata-ndc-schema-21.3
+  name: IATA NDC Schema 21.3
+  conforms: true
+  entity: TPConnects Technologies (70% FCTG-owned)
+  evidence: Same Iris API product page; Astra NDC gateway is separately described as
+    normalizing NDC versions 18.2 through 24.4.
+  source: https://tpconnects.com/iris-travel-seller-solutions/iris-api/
+- id: iata-one-order
+  name: IATA ONE Order
+  conforms: unknown
+  evidence: Referenced repeatedly in TPConnects conference-panel material, but no
+    implementation claim, endpoint or schema version is published.
+  source: https://tpconnects.com/llms.txt
+- id: mcp
+  name: Model Context Protocol
+  conforms: announced
+  entity: TPConnects Technologies (70% FCTG-owned)
+  evidence: >-
+    Two 2026 press releases announce an MCP layer over the Astra NDC gateway (March
+    12, 2026) and over the Iris aggregator (April 7, 2026), described as exposing
+    60+ airlines through a single machine-readable protocol.
+  source: https://tpconnects.com/news/iris-mcp-layer-ai-airline-distribution/
+  caveat: >-
+    Announcement only. No MCP server URL is published, mcp.tpconnects.com does not
+    resolve, and /.well-known/mcp.json returns 400. No `MCPServer` pointer is
+    emitted. See mcp/flight-centre-mcp.yml.
+- id: oauth2
+  name: OAuth 2.0
+  conforms: true
+  entity: TPConnects Technologies (70% FCTG-owned) - tpconnects.com web property
+  evidence: Live RFC 8414 authorization-server metadata at
+    https://tpconnects.com/.well-known/oauth-authorization-server declaring
+    authorization_code, client_credentials, refresh_token and implicit grants.
+  source: well-known/flight-centre-tpconnects-oauth-authorization-server.json
+  caveat: This is the tpconnects.com site login server, not the Iris or Astra API.
+- id: oidc
+  name: OpenID Connect Discovery 1.0
+  conforms: true
+  entity: TPConnects Technologies (70% FCTG-owned) - tpconnects.com web property
+  evidence: Live discovery document with issuer, jwks_uri, userinfo, introspection
+    and revocation endpoints; scopes openid/profile/email/basic; RS256 id tokens.
+  source: well-known/flight-centre-tpconnects-openid-configuration.json
+- id: rfc8414-oauth-metadata
+  name: RFC 8414 OAuth 2.0 Authorization Server Metadata
+  conforms: true
+  entity: TPConnects Technologies (70% FCTG-owned)
+  evidence: /.well-known/oauth-authorization-server returns 200 with valid metadata.
+- id: rfc9116-security-txt
+  name: RFC 9116 security.txt
+  conforms: false
+  evidence: No /.well-known/security.txt on fctgl.com, fcmtravel.com,
+    flightcentre.com.au, corporatetraveler.us, discova.com, envoyage.com,
+    whereto.com or tpconnects.com.
+- id: rfc9457-problem-details
+  name: RFC 9457 Problem Details for HTTP APIs
+  conforms: not-applicable
+  evidence: No published API contract to evaluate.
+- id: openapi
+  name: OpenAPI Specification
+  conforms: false
+  evidence: >-
+    No OpenAPI or Swagger document is served on any Flight Centre Travel Group host.
+    api.iris.tpconnects.com returns 401 for /openapi.json, /swagger.json,
+    /swagger/v1/swagger.json and /api-docs; iris.tpconnects.com/openapi.json returns
+    an HTML single-page-app shell, not a spec.
+- id: asyncapi
+  name: AsyncAPI
+  conforms: not-applicable
+  evidence: No event, streaming or webhook surface is published anywhere in the
+    group.
+- id: llms-txt
+  name: llms.txt
+  conforms: partial
+  entity: TPConnects Technologies (70% FCTG-owned)
+  evidence: >-
+    tpconnects.com/llms.txt returns a real 38KB link index. No Flight Centre brand
+    host serves llms.txt, but fcmtravel.com and corporatetraveler.us both publish
+    human-readable /llm-info pages written explicitly for AI assistants.
+  source: llms/flight-centre-tpconnects-llms.txt
+- id: gdpr-article-20-portability
+  name: GDPR Article 20 style data portability
+  conforms: true
+  evidence: >-
+    FCM privacy policy commits to providing personal information "in a suitable
+    machine-readable format" on request, implemented through a live OneTrust subject
+    access request web form linked from the FCTG privacy policy.
+  source: https://www.fcmtravel.com/en/privacy-policy
+  caveat: Personal-data subject access request only. No bulk export, no corporate
+    booking-data extract, no documented format or schema.
+compliance_program:
+  published: false
+  certifications: []
+  evidence: >-
+    No trust centre, no security page and no certification claim (SOC 2, ISO 27001,
+    PCI DSS, HIPAA, FedRAMP, CSA STAR) was found on any group domain. trust.* and
+    security.* subdomains do not resolve.

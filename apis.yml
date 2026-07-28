@@ -45,6 +45,8 @@ modified: '2026-07-28'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/flight-centre-domain-security.yml
 - type: Website
   url: https://www.fctgl.com/
 - type: Brands
@@ -55,8 +57,27 @@ common:
   url: https://www.fctgl.com/news
 - type: Locations
   url: https://www.fctgl.com/global-locations
-- type: Privacy
+- type: PrivacyPolicy
   url: https://www.fctgl.com/privacy-policy
+- type: PrivacyPolicy
+  name: FCM Travel privacy policy
+  url: https://www.fcmtravel.com/en/privacy-policy
+- type: TermsOfService
+  name: Flight Centre Australia terms of use
+  url: https://help.flightcentre.com.au/s/article/terms-of-use-au
+- type: TermsOfService
+  name: Flight Centre Australia booking terms and conditions
+  url: https://help.flightcentre.com.au/s/article/booking-terms-conditions-au
+- type: Support
+  name: Flight Centre help centre
+  url: https://help.flightcentre.com.au/s/
+- type: Blog
+  name: FCM news hub
+  url: https://www.fcmtravel.com/en-us/resources/news-hub
+- type: About
+  url: https://www.fctgl.com/about
+- type: Careers
+  url: https://www.fctgcareers.com/
 - type: Cookies
   url: https://www.fctgl.com/cookies-policy
 - type: DataPortability
@@ -71,6 +92,24 @@ common:
   url: https://www.fcmtravel.com/en/travel-insights/our-approach-ndc
 - type: Certification
   url: https://www.fcmtravel.com/en/resources/news-hub/fcm-is-first-global-tmc-to-achieve-iata-ndc-level-4-certification
+- type: Documentation
+  name: TPConnects Iris API (70% FCTG-owned; docs gated behind ReadMe/Auth0)
+  url: https://tpconnects.com/iris-travel-seller-solutions/iris-api/
+- type: Conformance
+  name: Standards conformance and compliance posture
+  url: conformance/flight-centre-conformance.yml
+- type: WellKnown
+  name: Well-known discovery probe index
+  url: well-known/flight-centre-well-known.yml
+- type: Packages
+  name: Package registry search results (no first-party SDK)
+  url: packages/flight-centre-packages.yml
+- type: LLMsTxt
+  name: Generated llms.txt for Flight Centre Travel Group
+  url: llms/flight-centre-llms.txt
+- type: Research
+  name: MCP posture - TPConnects Iris and Astra MCP announcements
+  url: mcp/flight-centre-mcp.yml
 - type: Review
   url: review.yml
 maintainers:
