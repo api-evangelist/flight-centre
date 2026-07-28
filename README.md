@@ -1,0 +1,66 @@
+# Flight Centre Travel Group (flight-centre)
+
+Flight Centre Travel Group (ASX: FLT) is a Brisbane-headquartered travel retailer and corporate travel manager, one of the largest agency groups in the world and by far the largest in its home market of Australia. It operates more than thirty brands across leisure retail (Flight Centre, Travel Associates, Cruiseabout, Aunt Betty, BYOjet, Envoyage, Scott Dunn, StudentUniverse), corporate travel management (FCM, Corporate Traveller, Stage and Screen, FCM Consulting) and wholesale supply (Discova, Infinity Holidays, Topdeck, Backroads Touring, TPConnects), with company-owned operations in twenty-four countries and licensed operations in roughly ninety more. Structurally it sits on the demand side of the travel distribution chain — an aggregator-reseller that buys airline, hotel, cruise and land content through the GDSs (Sabre and Amadeus), through NDC aggregators, and through direct supplier agreements, and resells it to consumers and corporate travel programmes.
+
+Its API posture is honestly assessed as **none published**. Flight Centre Travel Group operates no developer portal, publishes no API reference, no OpenAPI, and no partner API documentation on any of its brand domains. The group's genuine machine-readable distribution asset is TPConnects, the Dubai NDC aggregator it holds a majority stake in, whose Iris and Astra APIs are described on public product pages but whose reference documentation sits behind a ReadMe login.
+
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/flight-centre/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/flight-centre/refs/heads/main/apis.yml)
+
+## Tags
+
+- Travel
+- Australia
+- Corporate Travel
+- Travel Agency
+- Distribution
+- NDC
+- Aviation
+- Booking
+- Hotels
+- Aggregator
+
+## Timestamps
+
+- **Created:** 2026-07-28
+- **Modified:** 2026-07-28
+
+## APIs
+
+None. `apis[]` is deliberately empty.
+
+Every developer-shaped subdomain probed on `fctgl.com`, `fcmtravel.com`, `flightcentre.com.au`, `corporatetraveler.us`, `discova.com`, `studentuniverse.com` and `envoyage.com` fails to resolve in DNS. Every conventional discovery path on `fctgl.com` — `/developers`, `/api`, `/docs`, `/openapi.json`, `/swagger.json`, `/api-docs`, `/.well-known/security.txt` — returns 404. No GitHub organisation exists for `flightcentre`, `fctg`, `fcmtravel` or `FlightCentreTravelGroup`; the one that does exist, `github.com/Discova`, has zero public repositories.
+
+See [review.yml](review.yml) for the full probe log and the switching-cost analysis.
+
+## Switching Cost
+
+| Dimension | Finding |
+| --- | --- |
+| Interface shape | `none-published` — nothing to conform to a standard, nothing to swap |
+| Second source | `alternatives-with-migration` — GBT, BCD, CWT, CTM, Navan, TravelPerk, Webjet |
+| Exit path | `export-on-request` — GDPR-style subject access request via a live OneTrust web form; no bulk export for corporate booking data |
+| Identifier portability | IATA airline/airport codes and PNR record locators are portable; the IATA/ARC agency accreditation number that negotiated fares attach to is not |
+| Contractual lock-in | Nothing published — no developer terms, no API licence, no MSA; `/terms`, `/terms-of-use`, `/legal` all 404 |
+| Distribution model | `aggregator-reseller`, GDS-intermediated upstream (Sabre global technology partner since 2018) |
+| NDC posture | IATA NDC Level 4 certified (first global TMC, full offer and order management) — but no public NDC endpoint and no published NDC API |
+| Access gate | `none-published` — there is no developer programme to apply to |
+
+## Common Properties
+
+- [Website](https://www.fctgl.com/)
+- [Brands](https://www.fctgl.com/brands)
+- [Investor Relations](https://www.fctgl.com/investors)
+- [News](https://www.fctgl.com/news)
+- [Global Locations](https://www.fctgl.com/global-locations)
+- [Privacy Policy](https://www.fctgl.com/privacy-policy)
+- [Cookies Policy](https://www.fctgl.com/cookies-policy)
+- [Data Portability — Subject Access Request](https://privacyportal-de.onetrust.com/webform/01c95262-28d1-4b76-89f7-6b0b650d1af2/d036c47c-47be-4cb7-be63-5a65a9cc5f0d)
+- [LinkedIn](https://www.linkedin.com/company/flight-centre)
+- [FCM NDC Hub](https://www.fcmtravel.com/en/travel-insights/our-approach-ndc)
+- [IATA NDC Level 4 Certification Announcement](https://www.fcmtravel.com/en/resources/news-hub/fcm-is-first-global-tmc-to-achieve-iata-ndc-level-4-certification)
+- [FCM Travel — LLM Info](https://www.fcmtravel.com/en-us/llm-info)
+- [Corporate Traveler — LLM Info](https://www.corporatetraveler.us/en-us/llm-info)
+
+## Maintainers
+
+- Kin Lane — kin@apievangelist.com

@@ -1,0 +1,511 @@
+aid: flight-centre
+name: Flight Centre Travel Group
+review:
+  question: Does Flight Centre Travel Group publish a public developer portal, API
+    reference, or machine-readable API contract?
+  answer: false
+  date: '2026-07-28'
+  reviewer: API Evangelist
+  tier: ota-metasearch
+  homeMarket: Australia
+  primaryDomain: fctgl.com
+findings:
+  summary: |
+    Flight Centre Travel Group publishes no developer portal, no API reference, no
+    OpenAPI or Swagger document, and no partner API documentation on any domain it
+    controls. Every developer-shaped subdomain probed on fctgl.com, fcmtravel.com,
+    flightcentre.com.au, corporatetraveler.us, discova.com, studentuniverse.com and
+    envoyage.com fails to resolve in DNS. Every conventional discovery path on
+    fctgl.com (/developers, /api, /docs, /openapi.json, /swagger.json, /api-docs,
+    /.well-known/security.txt) returns 404. No GitHub organisation exists for
+    flightcentre, fctg, fcmtravel or FlightCentreTravelGroup; the one organisation
+    that does exist (github.com/Discova, the group's wholesale DMC brand) has zero
+    public repositories.
+
+    The group is a demand-side intermediary, not a supplier. It buys airline, hotel,
+    cruise and land content through the GDSs and through NDC aggregators, then
+    resells it through retail stores, brand websites and corporate travel programmes.
+    Its API surface is therefore almost entirely inbound consumption, not outbound
+    publication.
+
+    The one genuine machine-readable distribution asset in the group is TPConnects
+    Technologies, the Dubai NDC aggregator in which Flight Centre raised its equity
+    stake from 22.5% to 70% in March 2022 and which is listed as a group brand on
+    fctgl.com/brands. TPConnects publishes public product pages for an Iris API
+    (travel-seller side) and an Astra API (airline side), but its reference
+    documentation at docs.tpconnects.com redirects to a ReadMe dashboard login and
+    tpconnects.readme.io returns 401 /inactive. TPConnects is a distinct legal entity
+    with its own brand and warrants its own provider profile; it is recorded here as
+    evidence rather than listed under Flight Centre's apis[].
+  developerPortal:
+    published: false
+    url: null
+    note: No developer portal exists on any Flight Centre Travel Group brand domain.
+  apisListed: 0
+  openapiHarvested: false
+  specsCount: 0
+probes:
+  - url: https://fctgl.com
+    status: 200
+    note: Corporate site. Nav is About / Careers / Corporate Directory / Investors
+      / Brands / Sustainability / Reconciliation / Global Locations / History / News.
+      No technology, developer or API section.
+  - url: https://www.fctgl.com
+    status: 200
+  - url: https://developer.fctgl.com
+    status: 000
+    note: DNS does not resolve.
+  - url: https://developers.fctgl.com
+    status: 000
+    note: DNS does not resolve.
+  - url: https://docs.fctgl.com
+    status: 000
+    note: DNS does not resolve.
+  - url: https://api.fctgl.com
+    status: 000
+    note: DNS does not resolve.
+  - url: https://fctgl.com/developers
+    status: 404
+  - url: https://fctgl.com/api
+    status: 404
+  - url: https://fctgl.com/docs
+    status: 404
+  - url: https://fctgl.com/openapi.json
+    status: 404
+  - url: https://fctgl.com/swagger.json
+    status: 404
+  - url: https://fctgl.com/api-docs
+    status: 404
+  - url: https://fctgl.com/.well-known/security.txt
+    status: 404
+  - url: https://fctgl.com/llms.txt
+    status: 404
+  - url: https://www.fctgl.com/brands
+    status: 200
+    note: Authoritative brand list; source for the 30+ brands named in apis.yml.
+  - url: https://www.fctgl.com/investors
+    status: 200
+  - url: https://www.fctgl.com/privacy-policy
+    status: 200
+    note: Links the OneTrust subject access request web form and regional privacy
+      officer mailboxes.
+  - url: https://www.fctgl.com/terms
+    status: 404
+  - url: https://www.fctgl.com/terms-of-use
+    status: 404
+  - url: https://www.fcmtravel.com
+    status: 200
+    note: Redirects to /en-us. Corporate travel management brand.
+  - url: https://developer.fcmtravel.com
+    status: 000
+    note: DNS does not resolve.
+  - url: https://developers.fcmtravel.com
+    status: 000
+    note: DNS does not resolve.
+  - url: https://api.fcmtravel.com
+    status: 000
+    note: DNS does not resolve.
+  - url: https://docs.fcmtravel.com
+    status: 000
+    note: DNS does not resolve.
+  - url: https://www.fcmtravel.com/en/api
+    status: 404
+  - url: https://www.fcmtravel.com/en/developers
+    status: 404
+  - url: https://www.fcmtravel.com/en-us/products/platform
+    status: 200
+    note: FCM Platform marketing page. Names Concur, Deem and Cytric as connectable
+      OBTs and claims 600+ reports and NDC content. No API, SDK, webhook or export
+      language.
+  - url: https://www.fcmtravel.com/en-us/llm-info
+    status: 200
+    note: Machine-facing company facts page written for AI assistants. Mentions NDC
+      twice, no APIs or developer access.
+  - url: https://www.fcmtravel.com/llms.txt
+    status: 404
+  - url: https://www.fcmtravel.com/en/privacy-policy
+    status: 200
+    note: Carries the explicit GDPR data portability clause quoted below.
+  - url: https://www.flightcentre.com.au
+    status: 200
+  - url: https://www.flightcentre.com.au/robots.txt
+    status: 200
+    note: "Contains `Disallow: /api/` plus eight sitemap URLs served from internal
+      BFF paths /aurora/api/sitemap/ and /api-fc/sitemap/."
+  - url: https://www.flightcentre.com.au/aurora/api/sitemap/en-AU/stores.xml
+    status: 200
+    note: text/xml, 36,752 bytes, 310 <url> entries. An internal website sitemap
+      generator, not a product API. Not listed as an API.
+  - url: https://www.flightcentre.com.au/aurora/api/swagger.json
+    status: 404
+  - url: https://www.flightcentre.com.au/aurora/api/openapi.json
+    status: 404
+  - url: https://www.flightcentre.com.au/aurora/swagger
+    status: 404
+  - url: https://api.flightcentre.com.au
+    status: 000
+    note: DNS does not resolve.
+  - url: https://developer.flightcentre.com.au
+    status: 000
+    note: DNS does not resolve.
+  - url: https://www.flightcentre.com.au/privacy-policy
+    status: 200
+    note: Redirects to help.flightcentre.com.au Salesforce help centre article; page
+      rendered only as a JS shell when fetched.
+  - url: https://www.flightcentre.com.au/terms-and-conditions
+    status: 404
+  - url: https://www.flightcentre.com.au/booking-terms-and-conditions
+    status: 404
+  - url: https://www.corporatetraveller.com.au
+    status: 200
+  - url: https://www.corporatetraveler.us/en-us/llm-info
+    status: 200
+    note: "Machine-facing facts page. Only integration language published: 'Integration
+      with expense management systems via APIs/data connectors to streamline
+      booking-to-expense workflows.' No API is named, versioned or documented."
+  - url: https://developer.corporatetraveler.us
+    status: 000
+  - url: https://api.corporatetraveler.us
+    status: 000
+  - url: https://www.discova.com
+    status: 200
+    note: Wholesale DMC brand. B2B partner portal is Discova Connect, linked to the
+      Tourplan booking platform; no API documentation published.
+  - url: https://api.discova.com
+    status: 000
+  - url: https://developer.discova.com
+    status: 000
+  - url: https://docs.discova.com
+    status: 000
+  - url: https://www.studentuniverse.com
+    status: 403
+  - url: https://api.studentuniverse.com
+    status: 000
+  - url: https://developer.studentuniverse.com
+    status: 000
+  - url: https://www.envoyage.com
+    status: 200
+  - url: https://developer.envoyage.com
+    status: 000
+  - url: https://api.envoyage.com
+    status: 000
+  - url: https://api.github.com/orgs/flightcentre
+    status: 404
+  - url: https://api.github.com/orgs/fctg
+    status: 404
+  - url: https://api.github.com/orgs/fcmtravel
+    status: 404
+  - url: https://api.github.com/orgs/FlightCentreTravelGroup
+    status: 404
+  - url: https://api.github.com/orgs/Discova
+    status: 200
+    note: Organisation exists (id 54895764) but /orgs/Discova/repos returns an empty
+      array - zero public repositories.
+  - url: https://tpconnects.com
+    status: 200
+    note: Majority-owned (70%) NDC aggregator. Products - Astra NDC, Astra Nova,
+      Iris Portal, Iris API, Iris Pricing Engine.
+  - url: https://tpconnects.com/iris-travel-seller-solutions/iris-api/
+    status: 200
+    note: "Named standard: 'IATA NDC Schema 18.2 and 21.3'. Aggregates 60+ NDC/LCC
+      carriers and 4 GDSs. Shopping, order create/hold/ticket, exchange, cancel,
+      refund, reissue, void, split ticketing, ancillaries, disruption rebooking. No
+      base URL, no documentation link, no self-serve onboarding."
+  - url: https://tpconnects.com/astra-airline-solutions/astra-api/
+    status: 200
+    note: Airline-side NDC gateway. No base URL or documentation link; access is
+      'book a demo' via marketing@tpconnects.com.
+  - url: https://docs.tpconnects.com
+    status: 200
+    note: Redirects to https://dash.readme.com/login?iss=https%3A%2F%2Ftpconnects.eu.auth0.com%2F
+      - a ReadMe dashboard login behind Auth0. Reference docs are not public.
+  - url: https://docs.tpconnects.com/reference
+    status: 200
+    note: Same ReadMe login redirect.
+  - url: https://tpconnects.readme.io
+    status: 401
+    note: Redirects to /inactive.
+  - url: https://api.tpconnects.com
+    status: 000
+  - url: https://developer.tpconnects.com
+    status: 000
+  - url: https://ndcmarketplace.com
+    status: 200
+    note: TPConnects B2B agency marketplace front end. www host returns 503.
+  - url: https://api.ndcmarketplace.com
+    status: 000
+  - url: https://www.whereto.com
+    status: 200
+    note: FCTG-owned AI corporate booking tool.
+  - url: https://api.whereto.com
+    status: 200
+    note: Redirects to /login?next=%2F - an authenticated application host, not a
+      documented API. No reference, no spec.
+  - url: https://docs.whereto.com
+    status: 000
+  - url: https://privacyportal-de.onetrust.com/webform/01c95262-28d1-4b76-89f7-6b0b650d1af2/d036c47c-47be-4cb7-be63-5a65a9cc5f0d
+    status: 200
+    note: Live OneTrust subject access request web form linked from the FCTG privacy
+      policy. This is the only working data-out mechanism found.
+switchingCost:
+  interfaceShape:
+    value: none-published
+    standardNamed: null
+    evidence: |
+      Flight Centre Travel Group publishes no interface of any kind - no REST
+      reference, no OpenAPI, no SOAP/XML schema, no GraphQL, no partner API. There
+      is nothing to conform to a standard and nothing to swap. The customer contract
+      is a commercial travel management agreement and a set of human and web
+      touchpoints, not a machine interface.
+
+      The nearest thing to a standard interface anywhere in the group is one level
+      down, at majority-owned TPConnects, whose Iris API product page names 'IATA
+      NDC Schema 18.2 and 21.3' - a genuine open standard that other aggregators
+      (Duffel, Travelfusion, Verteil, the GDS NDC gateways) also implement. But that
+      interface belongs to TPConnects, is not offered under a Flight Centre brand,
+      and its reference documentation is behind a ReadMe/Auth0 login.
+    caveat: |
+      Corporate Traveler's llm-info page claims 'Integration with expense management
+      systems via APIs/data connectors' for the Melon platform. No API is named,
+      versioned, documented, or given an endpoint. That is a marketing statement, not
+      a published interface, and it is not counted here.
+  secondSource:
+    value: alternatives-with-migration
+    alternativesConsidered:
+      - American Express Global Business Travel (GBT), including Egencia
+      - BCD Travel
+      - CWT
+      - Corporate Travel Management (CTM) - the other large ASX-listed Australian
+        agency group
+      - Navan
+      - TravelPerk
+      - Webjet Group / Webjet TravelLink (Australian OTA and B2B bedbank)
+      - Direct-to-supplier and OBT-only stacks (Concur Travel, Deem, Cytric) with a
+        different TMC fulfilling
+    evidence: |
+      Nothing Flight Centre sells is unique inventory. It resells airline, hotel,
+      cruise and land content that every other agency group can also source through
+      Sabre, Amadeus, Travelport and the NDC aggregators. A corporate customer can
+      genuinely obtain the same capability from GBT, BCD, CWT, CTM, Navan or
+      TravelPerk.
+
+      Moving is a project, not a swap. What has to be rebuilt: traveller profiles and
+      loyalty numbers re-keyed into a new OBT, corporate policy and approval
+      hierarchies re-authored, negotiated airline and hotel rate agreements re-loaded
+      under a new IATA/ARC agency number, expense and HR feeds re-pointed, duty of
+      care and traveller-tracking integrations re-established, and historical booking
+      and spend data extracted for reporting continuity. Because Flight Centre
+      publishes no bulk export operation, that last step is the one with no
+      documented path.
+
+      On the leisure side the second-source position is stronger still - a consumer
+      has no switching cost at all beyond an unused credit or a World360 Rewards
+      balance.
+  exitPath:
+    value: export-on-request
+    operationCited: |
+      FCM privacy policy, verbatim: 'where any personal information has been
+      processed on the basis of your voluntary consent or as necessary to perform a
+      contract to which you are a party, request a copy of such personal information
+      in a suitable machine-readable format or have that personal information
+      transmitted by us to another controller'.
+    mechanism: OneTrust web form linked from https://www.fctgl.com/privacy-policy,
+      confirmed live 200 at https://privacyportal-de.onetrust.com/webform/01c95262-28d1-4b76-89f7-6b0b650d1af2/d036c47c-47be-4cb7-be63-5a65a9cc5f0d,
+      plus regional privacy mailboxes privacy@flightcentre.com.au,
+      privacy@flightcentre.co.nz, privacy@am.flightcentre.com, privacy@fctg.co.za.
+    evidence: |
+      This is a GDPR Article 20 style right implemented as a manual subject access
+      request for personal information about an individual. It is real, documented,
+      and the request form is live - which is more than most travel intermediaries
+      publish - but it is not a data-portability product.
+
+      There is no bulk export, dump, or reporting-extract operation published for
+      corporate customers. The FCM Platform marketing page advertises '600+ reports'
+      and Corporate Traveler advertises that Melon lets a customer 'export all
+      expense reports to their in-house expense management system', but neither
+      names an API, a format, a schema, or a documented extract operation. A
+      departing corporate customer's booking history, negotiated rate performance and
+      traveller profile data therefore have no published machine route out - the exit
+      is whatever the individually negotiated contract says, and the contract is not
+      published.
+  identifierPortability:
+    summary: No identifier schema published; industry-standard IATA airline and
+      airport codes plus PNR record locators inherited from the GDS/NDC layer, with
+      undocumented internal record IDs in Melon and the FCM Platform.
+    portableIdentifiers:
+      - IATA two-letter airline codes and three-letter airport codes - fully portable,
+        universal in the industry
+      - PNR record locators - portable in the sense that any agency or airline can
+        retrieve a PNR by locator, though the PNR itself lives in the GDS or airline
+        host and is claimed by the ticketing agency
+      - IATA / ARC agency accreditation numbers - these are the identifier that
+        actually binds. Negotiated fares, commissions and full-content entitlements
+        attach to the accredited agency number, so they do not travel with the
+        corporate customer when it changes TMC; they have to be renegotiated.
+      - IATA NDC order IDs and OrderItem IDs (via TPConnects Iris, which names NDC
+        18.2/21.3)
+    nonPortableIdentifiers:
+      - GDS-specific record identifiers in Sabre and Amadeus
+      - Melon and FCM Platform internal traveller, booking and approval record IDs -
+        no schema, no documentation, no published mapping
+      - World360 Rewards loyalty member IDs - proprietary to Flight Centre and
+        worthless outside it
+    evidence: |
+      Flight Centre publishes no data model, no field reference and no identifier
+      documentation, so none of this can be read off a schema. What can be verified
+      is the structural fact: the identifiers with real commercial weight in an
+      agency relationship are the IATA/ARC agency number and the GDS host record,
+      neither of which belongs to the customer.
+  contractualLockIn:
+    value: nothing published
+    verbatimPublished:
+      - source: https://www.fcmtravel.com/en/privacy-policy
+        quote: 'we will cease to retain your personal data, or remove the means by
+          which the data can be associated with you, as soon as it is reasonable to
+          assume that such retention no longer serves the purposes for which the
+          personal data were collected'
+      - source: https://www.fcmtravel.com/en/privacy-policy
+        quote: 'access, update, modify, rectify, erase, object to, or obtain a copy
+          of the personal information that we hold on you'
+    notPublished: |
+      No developer terms of service, no API licence, no partner agreement, no
+      supplier integration terms and no corporate travel management master services
+      agreement is published anywhere on fctgl.com, fcmtravel.com,
+      corporatetraveller.com.au or flightcentre.com.au. /terms, /terms-of-use,
+      /terms-and-conditions and /legal all return 404 on the domains probed.
+      Corporate TMC engagements at this scale are individually negotiated and
+      confidential.
+    honestFinding: |
+      Nothing about minimum term, exclusivity, full-content commitment, transaction
+      or segment fees, termination notice, or data return on termination can be
+      cited, because none of it is published. Recording an inference here would be
+      fabrication. The finding is the absence: for the largest travel agency group in
+      Australia, the entire commercial contract - the thing that actually creates the
+      switching cost - is invisible to public research.
+  distributionModel:
+    value: aggregator-reseller
+    evidence: |
+      Flight Centre Travel Group is a demand-side intermediary, not a supplier. It
+      holds no inventory of its own. Leisure customers reach it through roughly 300+
+      Australian retail stores (310 store URLs in the flightcentre.com.au sitemap),
+      brand websites, and the Aunt Betty / BYOjet / StudentUniverse online channels;
+      corporate customers reach it through negotiated TMC contracts fulfilled through
+      the FCM Platform and Corporate Traveller's Melon.
+
+      Upstream it is GDS-intermediated: Sabre was named a global technology partner
+      to Flight Centre Travel Group in March 2018 for Australia and New Zealand, and
+      FCM has publicly worked NDC content into both Amadeus Selling Platform Connect
+      and Sabre. Hotel content is piped in through a HotelHub API partnership rather
+      than a Flight Centre-built connection. NDC content is sourced through
+      'preferred technology aggregators in each of the markets where FCM operates',
+      one of which is its own majority-owned TPConnects.
+  ndcPosture:
+    certificationClaimed: IATA NDC Level 4 - Full Offer and Order Management
+    certificationClaim: |
+      'we were one of the first global travel management companies to achieve IATA
+      (International Air Transport Association) NDC certification' - fcmtravel.com
+      NDC hub. FCM states it is the first global travel management company to achieve
+      Level 4, confirming it 'can provide Full Offer and Order Management, meaning in
+      addition to booking NDC airline content, the company's travel consultants can
+      also support changes in travellers NDC bookings and flight disruption'.
+    publicNdcEndpoint: false
+    ndcApiPublished: false
+    gdsSurcharges: not applicable - Flight Centre is the agency, not the airline; it
+      pays or absorbs carrier GDS surcharges rather than levying them.
+    summary: |
+      IATA NDC Level 4 certified as a travel management company (first global TMC to
+      reach that level), but no public NDC endpoint and no published NDC API. NDC
+      content is consumed through Amadeus, Sabre and through majority-owned
+      TPConnects, whose Iris API implements IATA NDC Schema 18.2 and 21.3 behind a
+      gated ReadMe reference. In November 2025 FCM announced an Oversee partnership
+      for NDC reshopping, again a consumed capability rather than a published one.
+    caveat: |
+      IATA's NDC certification registry page probed at
+      https://www.iata.org/en/programs/airline-distribution/retailing/ndc-certification-registry/
+      returned 404, so the Level 4 claim is recorded as the organisation's own
+      published claim, corroborated by trade press, not as a registry-verified fact.
+  accessGate:
+    value: none-published
+    whatADeveloperMustSign: |
+      Nothing, because there is nothing to sign up for. No developer programme, no
+      API key issuance, no sandbox, no application form, no partner portal exists on
+      any Flight Centre Travel Group brand domain.
+
+      To transact with the group commercially a party must instead: as a corporate
+      customer, negotiate and sign a confidential travel management agreement; as a
+      supplier, contract through the group's supplier relations function (no public
+      supplier page - fctgl.com/suppliers returns 404); as an independent agent, join
+      Envoyage; as a travel seller wanting the group's aggregated air content, go to
+      TPConnects and request a demo (marketing@tpconnects.com), which is a commercial
+      agreement with a company that is 70% Flight Centre-owned, not a Flight Centre
+      product.
+
+      Underlying all air fulfilment is IATA / ARC accreditation, which the group holds
+      and a customer does not - that accreditation is the licence that makes the
+      intermediary necessary in the first place.
+    gated: true
+sources:
+  - url: https://www.fctgl.com/
+    type: Website
+    note: Corporate identity, ASX listing, ABN 25 003 377 188, 24 company-owned
+      countries plus licensees in ~90 more, dual leisure/corporate segments.
+  - url: https://www.fctgl.com/brands
+    type: Documentation
+    note: Authoritative brand list including TPConnects and WhereTo - the finding
+      that led to the group's only real API assets.
+  - url: https://www.fcmtravel.com/en/travel-insights/our-approach-ndc
+    type: Documentation
+    note: NDC posture, certification claim, 'GDS and aggregators' sourcing language.
+  - url: https://www.fcmtravel.com/en/resources/news-hub/fcm-is-first-global-tmc-to-achieve-iata-ndc-level-4-certification
+    type: Certification
+    note: Level 4 / Full Offer and Order Management claim; 'preferred technology
+      aggregators' unnamed.
+  - url: https://www.fcmtravel.com/en-us/products/platform
+    type: Documentation
+    note: FCM Platform. Concur/Deem/Cytric OBT connectivity, 600+ reports, NDC
+      content. No API, SDK, webhook or export documented.
+  - url: https://www.fcmtravel.com/en/privacy-policy
+    type: Privacy
+    note: Source of the verbatim data-portability and retention clauses.
+  - url: https://www.fctgl.com/privacy-policy
+    type: Privacy
+    note: Links the OneTrust subject access request web form and the regional privacy
+      officer mailboxes.
+  - url: https://www.corporatetraveler.us/en-us/llm-info
+    type: Documentation
+    note: The group's only machine-facing published artifact class. Contains the
+      single 'APIs/data connectors' integration sentence.
+  - url: https://tpconnects.com/iris-travel-seller-solutions/iris-api/
+    type: Documentation
+    note: IATA NDC Schema 18.2 and 21.3, 60+ NDC/LCC carriers, 4 GDSs, full order
+      lifecycle. Majority-owned by FCTG.
+  - url: https://tpconnects.com/astra-airline-solutions/astra-api/
+    type: Documentation
+    note: Airline-side NDC gateway; demo-request access only.
+  - url: https://www.prnewswire.com/news-releases/sabre-selected-as-global-technology-partner-to-flight-centre-travel-group-300609185.html
+    type: Press
+    note: March 2018 - Sabre named global technology partner for Australia and New
+      Zealand; Sabre GDS used to shop, book and manage supplier content.
+  - url: https://www.phocuswire.com/Flight-Centre-acquires-majority-stake-in-TPConnects
+    type: Press
+    note: March 2022 - equity stake in TPConnects raised from 22.5% to 70%.
+  - url: https://www.prnewswire.com/news-releases/oversee-and-fcm-travel-partner-to-launch-ndc-reshopping-for-modern-corporate-travel-302607103.html
+    type: Press
+    note: November 2025 - Oversee partnership for NDC reshopping, EDIFACT to NDC
+      migration for eligible itineraries.
+actions:
+  apisYmlCreated: true
+  apisListed: 0
+  openapiDirectoryCreated: false
+  reason: |
+    No parseable OpenAPI, Swagger, RAML, AsyncAPI, Postman collection or XML schema
+    was found on any Flight Centre Travel Group domain, so no openapi/ directory was
+    created. apis[] is deliberately empty - the correct and honest representation of
+    a large travel agency group that consumes machine interfaces at industrial scale
+    and publishes none.
+  followUp: |
+    TPConnects Technologies (70% FCTG-owned, Dubai) merits its own provider profile -
+    slug tpconnects - with the Iris and Astra API families, the ndcmarketplace.com
+    B2B portal, and a note that its reference documentation is gated behind ReadMe /
+    Auth0. WhereTo (all/whereto already exists) should be cross-referenced as an
+    FCTG-owned brand.
