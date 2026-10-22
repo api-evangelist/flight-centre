@@ -1,0 +1,62 @@
+generated: '2026-10-20'
+method: searched
+source:
+- https://tpconnects.com/partnerships/
+- https://zapier.com/apps/flight-centre/integrations
+- https://zapier.com/apps/flight-centre-travel-group/integrations
+- https://n8n.io/integrations/flight-centre/
+- https://composio.dev/toolkits/flight-centre
+- https://monid.ai/tools/flight-centre
+checked:
+- https://tpconnects.com/partnerships/
+- https://zapier.com/apps/flight-centre/integrations
+- https://zapier.com/apps/tpconnects/integrations
+- https://www.make.com/en/integrations/flight-centre
+- https://n8n.io/integrations/tpconnects/
+- https://composio.dev/toolkits/flight-centre
+- https://monid.ai/tools/flight-centre
+- https://n8n.io/integrations/flight-centre/
+- https://zapier.com/apps/flight-centre-travel-group/integrations
+summary: Flight Centre Travel Group publishes no API, integrations page or marketplace app of its own. The only
+  integration claims in the group sit at TPConnects Technologies (majority FCTG-owned), whose partnerships page
+  names technical and strategic partners in a logo wall. Edges below are those claims (attributed to TPConnects),
+  not contract-level integrations; IATA and AFRAA (industry bodies) and the listed resellers are not recorded as
+  integrations.
+marketplace_apps: []
+edges:
+- partner_name: Amadeus
+  partner: amadeus
+  type: claimed
+  evidence: https://tpconnects.com/partnerships/
+  direction: unknown
+  category: GDS
+  note: Logo "Partnership TPC x Amadeus" under Technical and Strategic Partners on the TPConnects page.
+- partner_name: Sabre
+  partner: sabre
+  type: claimed
+  evidence: https://tpconnects.com/partnerships/
+  direction: unknown
+  category: GDS
+  note: Logo "Partnership TPC x Sabre" under Technical and Strategic Partners.
+- partner_name: Travelport
+  partner: travelport
+  type: claimed
+  evidence: https://tpconnects.com/partnerships/
+  direction: unknown
+  category: GDS
+  note: Logo "Partnership TPC x Travelport" under Technical and Strategic Partners.
+- partner_name: Kyte
+  partner: null
+  type: claimed
+  evidence: https://tpconnects.com/news/kyte-and-tpconnects-announce-a-strategic-partnership/
+  direction: unknown
+  category: travel-api
+  note: Logo "Partnership TPC x Kyte" on the partnerships page plus a partnership announcement.
+- partner_name: AWS Marketplace
+  partner: null
+  type: claimed
+  evidence: https://tpconnects.com/partnerships/
+  direction: unknown
+  category: marketplace
+  note: Logo "Partnership TPCxAWSMarketplace"; no listing URL was given on the page.
+templates: []

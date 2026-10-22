@@ -1,0 +1,10 @@
+name: Flight Centre Travel Group rate limits
+generated: '2026-10-20'
+method: none
+source: https://docs.tpconnects.com/iris
+limit_count: 0
+limits: []
+note: >-
+  No rate limits are published. Flight Centre Travel Group exposes no public API, and the only
+  group API documentation (TPConnects Iris at docs.tpconnects.com/iris) redirects to a ReadMe
+  login page (HTTP 200 after redirect to dash.readme.com/login), so any limits are behind credentials.

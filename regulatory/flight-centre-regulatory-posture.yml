@@ -1,0 +1,136 @@
+generated: '2026-10-20'
+method: searched
+probe: true
+source: https://www.fctgl.com/privacy-policy
+notes: >-
+  Read from the Flight Centre Travel Group Limited global Privacy Notice (last updated 02 January 2026),
+  fetched 2026-10-20 (HTTP 200). The FCM Travel privacy notice (https://www.fcmtravel.com/en/privacy-notice)
+  carries the same text. The Terms of Use and Booking Terms on help.flightcentre.com.au were checked: their
+  candidate lines refer to consumer-law and content-reuse rights, not data-protection posture, so nothing
+  was recorded from them.
+signals:
+  data_subject_request:
+    url: https://www.fctgl.com/privacy-policy
+    section: '15. Feedback / Complaints / Subject Access Requests / Contacts'
+    channel: https://privacyportal-de.onetrust.com/webform/01c95262-28d1-4b76-89f7-6b0b650d1af2/d036c47c-47be-4cb7-be63-5a65a9cc5f0d
+    rights_named: [access, update, rectify, erase, object, copy, restrict processing, portability, human review of automated decisions]
+    evidence:
+    - source: https://www.fctgl.com/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: >-
+        Wherever you are in the world, if you wish to make aSubject Access Request to inform us of a change or
+        correction to your personalinformation, request a copy of the information we collect on you, requestdeletion
+        of your information or would like to restrict the further processingof your data, please use the Subject
+        Access Request Link below.
+    - source: https://www.fctgl.com/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: >-
+        If you wish to make a Subject Access Request: • to access, update, modify, rectify, erase, object to, or
+        obtain a copy of the personal information that we hold on you; or • to restrict or stop us from using any
+        of the personal information which we hold on you, including by withdrawing any voluntary consent you have
+        previously given to the processing of such information;
+    note: >-
+      A global Subject Access Request channel (a OneTrust web form linked as "Submit Request") covering access,
+      correction, deletion and restriction; the response time is stated only as "within the time period required
+      by the applicable jurisdiction", not as a fixed SLA. California residents are referred to a separate CCPA
+      Privacy Notice (section 2). The second quote is the opening of the Subject Access Request list in section 9.
+  ai_transparency:
+    url: https://www.fctgl.com/privacy-policy
+    section: '5. How do we use your personal information? / 9. Your rights in relation to the personal information we collect'
+    evidence:
+    - source: https://www.fctgl.com/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: >-
+        We may use AI and automated processing as the mechanism by which to process personal information to meet
+        the purposes set out herein. All such processing shall be undertaken in compliance with applicable AI laws
+        and regulations.
+    - source: https://www.fctgl.com/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: >-
+        where we use automated decision-making or AI processing that significantly affects you, and you have the
+        right to request human intervention and to challenge such decisions.
+    note: >-
+      Discloses that AI and automated processing may be used on personal information, and lists a right to human
+      intervention and to challenge significant automated or AI decisions as a Subject Access Request type. It does
+      not name the AI systems or the decisions involved.
+  data_retention:
+    url: https://www.fctgl.com/privacy-policy
+    section: '4. How do we collect personal information?'
+    evidence:
+    - source: https://www.fctgl.com/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: >-
+        For the retention of personal data, we may retain your personal data for as long as it is necessary to
+        fulfil the purposes for which they were collected, or as required or permitted by applicable laws.
+    - source: https://www.fctgl.com/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: >-
+        We will cease to retain your personal data or remove the means by which the data can be associated with you,
+        as soon as it is reasonable to assume that such retention no longer serves the purposes for which the
+        personal data were collected, and are no longer necessary for legal or business purposes.
+    note: >-
+      A purpose-limitation retention principle with no fixed periods or schedule. The section heading is inferred
+      from where the clause sits on the page (after section 4, before section 5).
+  data_residency:
+    url: https://www.fctgl.com/privacy-policy
+    section: '7. Is personal information transferred overseas?'
+    commitment: none
+    evidence:
+    - source: https://www.fctgl.com/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: >-
+        We use key service providers located in India, Indonesia, Philippines, Hong Kong, USA, United Kingdom, and
+        Australia.
+    - source: https://www.fctgl.com/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: >-
+        We will ensure that any such international transfers are necessary for the performance of a contract between
+        you and the overseas recipient, and/or are made subject to appropriate or suitable safeguards as required by
+        your local data protection laws (e.g., GDPR, China cybersecurity law, etc.).
+    note: >-
+      This is a disclosure of cross-border transfers, not a residency commitment: it names the countries of its key
+      service providers and relies on contractual necessity or safeguards. Elsewhere the notice says it is "not
+      possible for us to set out in this Notice all of the different countries to which we may send your personal
+      information."
+  subprocessors:
+    url: https://www.fctgl.com/privacy-policy
+    section: '6. Is personal information disclosed to third parties?'
+    list_published: false
+    evidence:
+    - source: https://www.fctgl.com/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: >-
+        We also deal with many different service providers all over the world, so it is not possible for us to set
+        out in this Notice all of the different countries to which we may send your personal information.
+    - source: https://www.fctgl.com/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: >-
+        We act as agent for or on behalf of many thousands of travel service providers around the world, so it is
+        not possible for us to set out in this Notice all of the travel service providers for whom we act or their
+        locations.
+    note: >-
+      Third-party recipients are described only by category (contractors, suppliers, travel service providers,
+      payment providers). The notice says outright that no complete list of providers is published.
+  age_assurance:
+    url: https://www.fctgl.com/privacy-policy
+    evidence:
+    - source: https://www.fctgl.com/privacy-policy
+      http_status: 200
+      fetched: '2026-10-20'
+      quote: >-
+        Please note that, when necessary for travel arrangements, we may collect from a responsible adult personal
+        information relating to a child of any age, but we do not knowingly collect any such information directly
+        from children.
+    note: >-
+      A children's-data statement: children's data comes through a responsible adult and is not knowingly collected
+      from children directly. The notice describes no age-verification mechanism.

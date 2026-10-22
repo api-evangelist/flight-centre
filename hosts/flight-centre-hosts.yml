@@ -1,0 +1,179 @@
+generated: '2026-10-20'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 14
+  own: 3
+  other_domain: 10
+  platform: 1
+  roles:
+  - api
+  - docs
+  - marketing
+  - other
+  - support
+  - website
+hosts:
+- host: api.com.au
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: api.com.au
+  role: api
+  relation: other-domain
+- host: api.corporatetraveler.us
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: corporatetraveler.us
+  role: api
+  relation: other-domain
+- host: api.fcmtravel.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: fcmtravel.com
+  role: api
+  relation: other-domain
+- host: api.fctgl.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: fctgl.com
+  role: api
+  relation: own
+- host: api.onetrust.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: onetrust.com
+  role: api
+  relation: other-domain
+- host: help.flightcentre.com.au
+  found_by:
+  - pointer
+  - probed
+  - docs-index
+  - well-known
+  types:
+  - TermsOfService
+  - Support
+  serves:
+  - docs
+  registrable_domain: flightcentre.com.au
+  role: support
+  relation: other-domain
+- host: history.fctgl.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: fctgl.com
+  role: other
+  relation: own
+- host: privacyportal-de.onetrust.com
+  found_by:
+  - pointer
+  - probed
+  - well-known
+  types:
+  - DataPortability
+  serves: []
+  registrable_domain: onetrust.com
+  role: other
+  relation: other-domain
+- host: tpconnects.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - well-known
+  types:
+  - Documentation
+  serves:
+  - docs
+  registrable_domain: tpconnects.com
+  role: docs
+  relation: other-domain
+- host: www.corporatetraveler.us
+  found_by:
+  - pointer
+  - probed
+  - docs-index
+  - well-known
+  types:
+  - Documentation
+  serves:
+  - docs
+  registrable_domain: corporatetraveler.us
+  role: docs
+  relation: other-domain
+- host: www.fcmtravel.com
+  found_by:
+  - pointer
+  - probed
+  - docs-index
+  - well-known
+  - vendor-detect
+  types:
+  - PrivacyPolicy
+  - Blog
+  - Documentation
+  - Certification
+  serves:
+  - docs
+  - cdn
+  vendor: fastly
+  registrable_domain: fcmtravel.com
+  role: docs
+  relation: other-domain
+- host: www.fctgcareers.com
+  found_by:
+  - pointer
+  - probed
+  - well-known
+  types:
+  - Careers
+  serves: []
+  registrable_domain: fctgcareers.com
+  role: marketing
+  relation: other-domain
+- host: www.fctgl.com
+  found_by:
+  - pointer
+  - probed
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  - Brands
+  - InvestorRelations
+  - Newsroom
+  - Locations
+  - PrivacyPolicy
+  - About
+  - Cookies
+  serves:
+  - cdn
+  vendor: cloudflare
+  registrable_domain: fctgl.com
+  role: website
+  relation: own
+- host: www.linkedin.com
+  found_by:
+  - pointer
+  types:
+  - LinkedIn
+  serves: []
+  registrable_domain: linkedin.com
+  role: other
+  relation: platform

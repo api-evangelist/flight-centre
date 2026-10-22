@@ -1,4 +1,4 @@
-generated: '2026-07-28'
+generated: '2026-10-20'
 method: searched
 status: announced
 published: false
@@ -75,7 +75,12 @@ tools_note: No tool list can be recorded. tools/list requires a server URL, none
 follow_up: TPConnects Technologies warrants its own provider profile (slug tpconnects). If an MCP endpoint
   is published there, that repo - not this one - is where the MCPServer pointer belongs.
 deployment:
-  mode: unclear
+  mode: none
+  auth: unknown
   verified: searched
-  checked: '2026-08-12'
-  source: catalog MCP census
+  checked: '2026-10-20'
+  source: https://tpconnects.com/news/iris-mcp-layer-ai-airline-distribution/
+  note: 'Re-checked 2026-10-20: both TPConnects MCP announcements (Iris, Astra) fetched 200 and name no
+    MCP endpoint URL, transport or install command; tpconnects.com/llms.txt (200) indexes only the two
+    news posts. Flight Centre Travel Group itself publishes no MCP server and no OpenAPI from which a
+    candidate tool set could be derived.'

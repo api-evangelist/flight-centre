@@ -1,33 +1,28 @@
 aid: flight-centre
+
 url: https://raw.githubusercontent.com/api-evangelist/flight-centre/refs/heads/main/apis.yml
+
 name: Flight Centre Travel Group
+
 kind: company
+
 humanURL: https://www.fctgl.com/
-description: >-
-  Flight Centre Travel Group (ASX FLT) is a Brisbane-headquartered travel
-  retailer and corporate travel manager, one of the largest agency groups in the world
-  and by far the largest in its home market of Australia. It operates more than thirty
-  brands across leisure retail (Flight Centre, Travel Associates, Cruiseabout, Aunt
-  Betty, BYOjet, Envoyage, Scott Dunn, StudentUniverse), corporate travel management
-  (FCM, Corporate Traveller, Stage and Screen, FCM Consulting) and wholesale supply
-  (Discova, Infinity Holidays, Topdeck, Backroads Touring, TPConnects), with company-owned
-  operations in twenty-four countries and licensed operations in roughly ninety more.
-  Structurally it sits on the demand side of the travel distribution chain - it is
-  an aggregator-reseller that buys airline, hotel, cruise and land content through
-  the GDSs (Sabre and Amadeus), through NDC aggregators, and through direct supplier
-  agreements, and resells it to consumers and corporate travel programmes. Its API
-  posture is honestly assessed as none published - Flight Centre Travel Group operates
-  no developer portal, publishes no API reference, no OpenAPI, and no partner API
-  documentation on any of its brand domains, and probing developer, developers, docs
-  and api subdomains of fctgl.com, fcmtravel.com and flightcentre.com.au returns no
-  DNS record at all. The group's genuine machine-readable distribution asset is TPConnects,
-  the Dubai NDC aggregator it holds a majority stake in, whose Iris and Astra APIs
-  are described on public product pages but whose reference documentation sits behind
-  a ReadMe login. Flight Centre and FCM were the first global travel management company
-  to receive IATA NDC Level 4 certification for full offer and order management, yet
-  no public NDC endpoint is exposed. There is no self-serve access gate and no bulk
-  export - the only documented exit path is a personal-data subject access request
-  through a OneTrust web form.
+
+description: Flight Centre Travel Group (ASX FLT) is a Brisbane-headquartered travel retailer and corporate travel manager, one of the largest
+  agency groups in the world and by far the largest in its home market of Australia. It operates more than thirty brands across leisure retail
+  (Flight Centre, Travel Associates, Cruiseabout, Aunt Betty, BYOjet, Envoyage, Scott Dunn, StudentUniverse), corporate travel management (FCM,
+  Corporate Traveller, Stage and Screen, FCM Consulting) and wholesale supply (Discova, Infinity Holidays, Topdeck, Backroads Touring, TPConnects),
+  with company-owned operations in twenty-four countries and licensed operations in roughly ninety more. Structurally it sits on the demand side
+  of the travel distribution chain - it is an aggregator-reseller that buys airline, hotel, cruise and land content through the GDSs (Sabre and
+  Amadeus), through NDC aggregators, and through direct supplier agreements, and resells it to consumers and corporate travel programmes. Its
+  API posture is honestly assessed as none published - Flight Centre Travel Group operates no developer portal, publishes no API reference, no
+  OpenAPI, and no partner API documentation on any of its brand domains, and probing developer, developers, docs and api subdomains of fctgl.com,
+  fcmtravel.com and flightcentre.com.au returns no DNS record at all. The group's genuine machine-readable distribution asset is TPConnects, the
+  Dubai NDC aggregator it holds a majority stake in, whose Iris and Astra APIs are described on public product pages but whose reference documentation
+  sits behind a ReadMe login. Flight Centre and FCM were the first global travel management company to receive IATA NDC Level 4 certification
+  for full offer and order management, yet no public NDC endpoint is exposed. There is no self-serve access gate and no bulk export - the only
+  documented exit path is a personal-data subject access request through a OneTrust web form.
+
 deliveryModel:
   model: saas
   open_source: false
@@ -39,6 +34,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -51,7 +47,9 @@ accessModel:
   - security
   generated: '2026-09-02'
   method: derived
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+
+image: https://cdn.prod.website-files.com/64251a30bf0ae30eec6689e4/6464853dd51d3b84b4759377_FCTG_R_LSC_BLK.avif
+
 tags:
 - Travel
 - Australia
@@ -63,11 +61,26 @@ tags:
 - Booking
 - Hotels
 - Aggregator
+
 created: '2026-07-28'
-modified: '2026-07-28'
+
+modified: '2026-10-20'
+
 specificationVersion: '0.23'
-apis: []
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
 common:
+- type: LLMsTxt
+  url: llms/flight-centre-tpconnects-llms.txt
+- type: Hosts
+  url: hosts/flight-centre-hosts.yml
+- type: IntegrationEdges
+  url: integrations/flight-centre-integration-edges.yml
+- type: Vendors
+  url: vendors/flight-centre-vendors.yml
 - type: DomainSecurity
   url: security/flight-centre-domain-security.yml
 - type: Website
@@ -76,7 +89,7 @@ common:
   url: https://www.fctgl.com/brands
 - type: InvestorRelations
   url: https://www.fctgl.com/investors
-- type: News
+- type: Newsroom
   url: https://www.fctgl.com/news
 - type: Locations
   url: https://www.fctgl.com/global-locations
@@ -84,19 +97,19 @@ common:
   url: https://www.fctgl.com/privacy-policy
 - type: PrivacyPolicy
   name: FCM Travel privacy policy
-  url: https://www.fcmtravel.com/en/privacy-policy
+  url: https://www.fcmtravel.com/en/privacy-notice
 - type: TermsOfService
   name: Flight Centre Australia terms of use
-  url: https://help.flightcentre.com.au/s/article/terms-of-use-au
+  url: https://help.flightcentre.com.au/article/terms-of-use-au
 - type: TermsOfService
   name: Flight Centre Australia booking terms and conditions
-  url: https://help.flightcentre.com.au/s/article/booking-terms-conditions-au
+  url: https://help.flightcentre.com.au/article/booking-terms-conditions-au
 - type: Support
   name: Flight Centre help centre
-  url: https://help.flightcentre.com.au/s/
+  url: https://help.flightcentre.com.au/
 - type: Blog
   name: FCM news hub
-  url: https://www.fcmtravel.com/en-us/resources/news-hub
+  url: https://www.fcmtravel.com/en-us/discover-fcm/news-hub
 - type: About
   url: https://www.fctgl.com/about
 - type: Careers
@@ -112,9 +125,9 @@ common:
 - type: Documentation
   url: https://www.corporatetraveler.us/en-us/llm-info
 - type: Documentation
-  url: https://www.fcmtravel.com/en/travel-insights/our-approach-ndc
+  url: https://www.fcmtravel.com/en/solutions/travel-content/ndc
 - type: Certification
-  url: https://www.fcmtravel.com/en/resources/news-hub/fcm-is-first-global-tmc-to-achieve-iata-ndc-level-4-certification
+  url: https://www.fcmtravel.com/en/travel-hub/fcm-is-first-global-tmc-to-achieve-iata-ndc-level-4-certification
 - type: Documentation
   name: TPConnects Iris API (70% FCTG-owned; docs gated behind ReadMe/Auth0)
   url: https://tpconnects.com/iris-travel-seller-solutions/iris-api/
@@ -135,6 +148,49 @@ common:
   url: mcp/flight-centre-mcp.yml
 - type: Review
   url: review.yml
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+
+apis:
+- name: TPConnects Iris API
+  description: Iris is the NDC aggregator API of TPConnects, the Dubai NDC aggregator majority-owned by Flight Centre Travel Group. It gives travel
+    sellers (OTAs, TMCs, consolidators and corporate booking tools) normalized airline content from 60+ NDC/LCC carriers and 4 GDS systems, built
+    on IATA NDC Schema 18.2 and 21.3, with order creation, change, ancillaries, disruption handling and notifications. Its reference documentation
+    (docs.tpconnects.com/iris) redirects to a ReadMe login, and no public base URL or machine-readable contract is published.
+  humanURL: https://tpconnects.com/iris-travel-seller-solutions/iris-api/
+  tags:
+  - NDC
+  - Air
+  - Aggregator
+  properties:
+  - type: Documentation
+    url: https://docs.tpconnects.com/iris
+  aid: flight-centre:tpconnects-iris-api
+- name: TPConnects Astra NDC API Gateway
+  description: Astra is the TPConnects NDC API Gateway for airlines, letting carriers make their content and offers available to travel sellers
+    directly, with booking, seat and baggage ancillaries and rich media content. Reference documentation sits behind the same TPConnects ReadMe
+    login; no public base URL or machine-readable contract is published.
+  humanURL: https://tpconnects.com/astra-airline-solutions/astra-api/
+  tags:
+  - NDC
+  - Airline
+  - Distribution
+  properties: []
+  aid: flight-centre:tpconnects-astra-ndc-api-gateway
+
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: Website www.fctgl.com answered 200 with readable HTML naming Flight Centre Travel Group (preflight front_door open); logo taken from
+    its homepage; all existing pointers re-fetched live 2026-10-20.
+  evidence:
+  - url: https://www.fctgl.com/
+    status: 200
+  - url: https://cdn.prod.website-files.com/64251a30bf0ae30eec6689e4/6464853dd51d3b84b4759377_FCTG_R_LSC_BLK.avif
+    status: 200
+  - url: https://www.fctgl.com/news
+    status: 200
+x-enrichment:
+  date: '2026-10-20'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic

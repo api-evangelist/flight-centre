@@ -123,10 +123,20 @@ standards:
   source: https://www.fcmtravel.com/en/privacy-policy
   caveat: Personal-data subject access request only. No bulk export, no corporate
     booking-data extract, no documented format or schema.
+- id: gdpr
+  conforms: claimed
+  evidence: >-
+    FCM's Trust and Compliance page (https://www.fcmtravel.com/en-us/trust-and-compliance,
+    HTTP 200, read 2026-10-20) publishes downloadable documents including "FCM's GDPR compliance
+    statement", a controller-to-controller data privacy addendum, a cyber and information
+    security statement and a partner network assurance statement, and states "Under GDPR, we
+    process personal data as a data controller". Self-declared; no third-party attestation named.
 compliance_program:
   published: false
   certifications: []
   evidence: >-
-    No trust centre, no security page and no certification claim (SOC 2, ISO 27001,
-    PCI DSS, HIPAA, FedRAMP, CSA STAR) was found on any group domain. trust.* and
+    No certification claim (SOC 2, ISO 27001, PCI DSS, HIPAA, FedRAMP, CSA STAR) was found
+    on any group domain. FCM does publish a document-download Trust and Compliance page
+    (https://www.fcmtravel.com/en-us/trust-and-compliance, HTTP 200 on 2026-10-20) carrying
+    GDPR and cyber-security statements, but it names no certification. trust.* and
     security.* subdomains do not resolve.

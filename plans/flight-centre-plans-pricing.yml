@@ -1,0 +1,20 @@
+name: Flight Centre Travel Group pricing
+generated: '2026-10-20'
+method: none
+source: https://tpconnects.com/iris-travel-seller-solutions/iris-pricing-engine/
+audience: unclear
+pricing_basis: none
+published: false
+plan_count: 0
+plans: []
+delivery: {model: unclear}
+note: >-
+  No API pricing or plan tiers are published by Flight Centre Travel Group or by TPConnects.
+  The "Iris Pricing Engine" page (HTTP 200) is a fare-markup product feature, not a price list;
+  the Iris/Astra API pages route to "Book a demo"/contact, and docs.tpconnects.com/iris redirects
+  to a ReadMe login (dash.readme.com). Checked 2026-10-20.
+checked:
+- https://tpconnects.com/iris-travel-seller-solutions/iris-pricing-engine/
+- https://tpconnects.com/iris-travel-seller-solutions/iris-api/
+- https://tpconnects.com/astra-airline-solutions/astra-api/
+- https://docs.tpconnects.com/iris
