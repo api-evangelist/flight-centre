@@ -1,4 +1,4 @@
-# Flight Centre Travel Group (flight-centre)
+# Flight Centre Travel Group
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,82 +64,101 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Flight Centre Travel Group (ASX: FLT) is a Brisbane-headquartered travel retailer and corporate travel manager, one of the largest agency groups in the world and by far the largest in its home market of Australia. It operates more than thirty brands across leisure retail (Flight Centre, Travel Associates, Cruiseabout, Aunt Betty, BYOjet, Envoyage, Scott Dunn, StudentUniverse), corporate travel management (FCM, Corporate Traveller, Stage and Screen, FCM Consulting) and wholesale supply (Discova, Infinity Holidays, Topdeck, Backroads Touring, TPConnects), with company-owned operations in twenty-four countries and licensed operations in roughly ninety more. Structurally it sits on the demand side of the travel distribution chain — an aggregator-reseller that buys airline, hotel, cruise and land content through the GDSs (Sabre and Amadeus), through NDC aggregators, and through direct supplier agreements, and resells it to consumers and corporate travel programmes.
+Flight Centre Travel Group (ASX FLT) is a Brisbane-headquartered travel retailer and corporate travel manager, one of the largest agency groups in the world and by far the largest in its home market of Australia. It operates more than thirty brands across leisure retail (Flight Centre, Travel Associates, Cruiseabout, Aunt Betty, BYOjet, Envoyage, Scott Dunn, StudentUniverse), corporate travel management (FCM, Corporate Traveller, Stage and Screen, FCM Consulting) and wholesale supply (Discova, Infinity Holidays, Topdeck, Backroads Touring, TPConnects), with company-owned operations in twenty-four countries and licensed operations in roughly ninety more. Structurally it sits on the demand side of the travel distribution chain - it is an aggregator-reseller that buys airline, hotel, cruise and land content through the GDSs (Sabre and Amadeus), through NDC aggregators, and through direct supplier agreements, and resells it to consumers and corporate travel programmes. Its API posture is honestly assessed as none published - Flight Centre Travel Group operates no developer portal, publishes no API reference, no OpenAPI, and no partner API documentation on any of its brand domains, and probing developer, developers, docs and api subdomains of fctgl.com, fcmtravel.com and flightcentre.com.au returns no DNS record at all. The group's genuine machine-readable distribution asset is TPConnects, the Dubai NDC aggregator it holds a majority stake in, whose Iris and Astra APIs are described on public product pages but whose reference documentation sits behind a ReadMe login. Flight Centre and FCM were the first global travel management company to receive IATA NDC Level 4 certification for full offer and order management, yet no public NDC endpoint is exposed. There is no self-serve access gate and no bulk export - the only documented exit path is a personal-data subject access request through a OneTrust web form.
 
-Its API posture is honestly assessed as **none published**. Flight Centre Travel Group operates no developer portal, publishes no API reference, no OpenAPI, and no partner API documentation on any of its brand domains. The group's genuine machine-readable distribution asset is TPConnects, the Dubai NDC aggregator it holds a majority stake in, whose Iris and Astra APIs are described on public product pages but whose reference documentation sits behind a ReadMe login.
+**Areas:** Travel · Australia · Corporate Travel · Travel Agency · Distribution · NDC · Aviation · Booking · Hotels · Aggregator
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/flight-centre/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/flight-centre/refs/heads/main/apis.yml)
+## Flight Centre Travel Group on APIs.io
 
-## Tags
+Everything profiled for Flight Centre Travel Group is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/flight-centre/](https://apis.io/providers/flight-centre/)** — or go straight to one of the APIs or properties below.
 
-- Travel
-- Australia
-- Corporate Travel
-- Travel Agency
-- Distribution
-- NDC
-- Aviation
-- Booking
-- Hotels
-- Aggregator
+### APIs (2)
 
-## Timestamps
+- [TPConnects Iris API](https://apis.io/apis/flight-centre/tpconnects-iris-api/) — Iris is the NDC aggregator API of TPConnects, the Dubai NDC aggregator majority-owned by Flight Centre Travel Group. It gives travel sellers (OTAs, TMCs,…
+- [TPConnects Astra NDC API Gateway](https://apis.io/apis/flight-centre/tpconnects-astra-ndc-api-gateway/) — Astra is the TPConnects NDC API Gateway for airlines, letting carriers make their content and offers available to travel sellers directly, with booking,…
 
-- **Created:** 2026-07-28
-- **Modified:** 2026-07-28
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-None. `apis[]` is deliberately empty.
+#### Security (1)
 
-Every developer-shaped subdomain probed on `fctgl.com`, `fcmtravel.com`, `flightcentre.com.au`, `corporatetraveler.us`, `discova.com`, `studentuniverse.com` and `envoyage.com` fails to resolve in DNS. Every conventional discovery path on `fctgl.com` — `/developers`, `/api`, `/docs`, `/openapi.json`, `/swagger.json`, `/api-docs`, `/.well-known/security.txt` — returns 404. No GitHub organisation exists for `flightcentre`, `fctg`, `fcmtravel` or `FlightCentreTravelGroup`; the one that does exist, `github.com/Discova`, has zero public repositories.
+Authentication, trust centre, and vulnerability disclosure.
 
-See [review.yml](review.yml) for the full probe log and the switching-cost analysis.
+- [Flight Centre Domain Security](https://apis.io/security/flight-centre/flight-centre-domain-security/)
 
-## Artifacts
+#### Plans and pricing (1)
 
-| Artifact | File | What it records |
-| --- | --- | --- |
-| Conformance | [conformance/flight-centre-conformance.yml](conformance/flight-centre-conformance.yml) | IATA NDC Level 4 (claimed), NDC Schema 18.2/21.3 via TPConnects, OAuth 2.0 / OIDC on tpconnects.com, and the standards that are genuinely not applicable. No compliance programme is published — no SOC 2, ISO 27001, PCI DSS, HIPAA or FedRAMP claim exists on any group domain. |
-| Well-known | [well-known/flight-centre-well-known.yml](well-known/flight-centre-well-known.yml) | Every `/.well-known/` path probed across nine group hosts. Flight Centre serves none; the only live documents belong to 70%-owned TPConnects and are archived alongside. |
-| Domain security | [security/flight-centre-domain-security.yml](security/flight-centre-domain-security.yml) | TLS, HSTS, DNSSEC, CAA, SPF and DMARC across nine hosts and eight domains. All HTTPS; six of nine serve HSTS; two domains are DNSSEC-signed; only `envoyage.com` publishes CAA. |
-| MCP posture | [mcp/flight-centre-mcp.yml](mcp/flight-centre-mcp.yml) | TPConnects announced MCP layers over Astra (March 2026) and Iris (April 2026). Announcements only — no server URL, no tool list, every discovery probe fails. No `MCPServer` pointer is claimed. |
-| Packages | [packages/flight-centre-packages.yml](packages/flight-centre-packages.yml) | npm, PyPI and GitHub sweep. Zero first-party SDKs. Both group GitHub organisations have zero public repositories. |
-| llms.txt | [llms/flight-centre-llms.txt](llms/flight-centre-llms.txt) | Generated. The group publishes no `llms.txt` of its own, but FCM and Corporate Traveler both publish human-readable `/llm-info` pages written for AI assistants, and [tpconnects.com/llms.txt](llms/flight-centre-tpconnects-llms.txt) is archived verbatim. |
+Published plans, tiers and prices.
 
-### What changed in the 2026-07-28 round
+- [Flight Centre Plans Pricing](https://apis.io/plans/flight-centre/flight-centre-plans-pricing/)
 
-The "no published API" finding is unchanged for every Flight Centre brand. Three new machine-readable facts turned up one level down at 70%-owned TPConnects: a real `llms.txt`, live OIDC/RFC 8414 discovery documents on the web property, and two 2026 press releases announcing MCP layers over the Iris and Astra platforms. A genuine API host was also identified — `api.iris.tpconnects.com` resolves and returns `401` for every path, including `/openapi.json` and `/swagger/v1/swagger.json`, so the contract-discovery pass still ends with no machine-readable contract in public.
+#### Rate limits (1)
 
-## Switching Cost
+Published request limits.
 
-| Dimension | Finding |
-| --- | --- |
-| Interface shape | `none-published` — nothing to conform to a standard, nothing to swap |
-| Second source | `alternatives-with-migration` — GBT, BCD, CWT, CTM, Navan, TravelPerk, Webjet |
-| Exit path | `export-on-request` — GDPR-style subject access request via a live OneTrust web form; no bulk export for corporate booking data |
-| Identifier portability | IATA airline/airport codes and PNR record locators are portable; the IATA/ARC agency accreditation number that negotiated fares attach to is not |
-| Contractual lock-in | Nothing published — no developer terms, no API licence, no MSA; `/terms`, `/terms-of-use`, `/legal` all 404 |
-| Distribution model | `aggregator-reseller`, GDS-intermediated upstream (Sabre global technology partner since 2018) |
-| NDC posture | IATA NDC Level 4 certified (first global TMC, full offer and order management) — but no public NDC endpoint and no published NDC API |
-| Access gate | `none-published` — there is no developer programme to apply to |
+- [Flight Centre Rate Limits](https://apis.io/rate-limits/flight-centre/flight-centre-rate-limits/)
 
-## Common Properties
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.fctgl.com/)
-- [Brands](https://www.fctgl.com/brands)
-- [Investor Relations](https://www.fctgl.com/investors)
-- [News](https://www.fctgl.com/news)
-- [Global Locations](https://www.fctgl.com/global-locations)
-- [Privacy Policy](https://www.fctgl.com/privacy-policy)
-- [Cookies Policy](https://www.fctgl.com/cookies-policy)
-- [Data Portability — Subject Access Request](https://privacyportal-de.onetrust.com/webform/01c95262-28d1-4b76-89f7-6b0b650d1af2/d036c47c-47be-4cb7-be63-5a65a9cc5f0d)
-- [LinkedIn](https://www.linkedin.com/company/flight-centre)
-- [FCM NDC Hub](https://www.fcmtravel.com/en/travel-insights/our-approach-ndc)
-- [IATA NDC Level 4 Certification Announcement](https://www.fcmtravel.com/en/resources/news-hub/fcm-is-first-global-tmc-to-achieve-iata-ndc-level-4-certification)
-- [FCM Travel — LLM Info](https://www.fcmtravel.com/en-us/llm-info)
-- [Corporate Traveler — LLM Info](https://www.corporatetraveler.us/en-us/llm-info)
+- [Documentation](https://www.fcmtravel.com/en-us/llm-info)
+- [Support](https://help.flightcentre.com.au/)
+- [Blog](https://www.fcmtravel.com/en-us/discover-fcm/news-hub)
+- [Terms of service](https://help.flightcentre.com.au/article/terms-of-use-au)
+- [Privacy policy](https://www.fctgl.com/privacy-policy)
 
-## Maintainers
+## API Evangelist rating
 
-- Kin Lane — kin@apievangelist.com
+**Kin Score 17.6** — emerging · rubric 0.24.0 · scored 2026-10-20
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 21.1 |
+
+**Agent readiness 16.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/flight-centre/](https://apis.io/providers/flight-centre/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Flight Centre Travel Group: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/flight-centre/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
